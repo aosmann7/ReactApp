@@ -13,6 +13,7 @@ import Fetcher from './components/Fetcher';
 import Hooks, {aFunc} from './components/Hooks';
 import ToggleButtons from './components/ToggleButtons';
 import PopcornSales from './components/PopcornSales';
+import Assignment8 from './components/Assignment8';
 
 export const useLinkOpener = () => {
   const windowObjectReferences = useMemo(() => ({}), []);
@@ -43,7 +44,7 @@ export const useLinkOpener = () => {
 };
 
 export default function App(props) {
-  const [currentTab, setCurrentTab] = useState(0);
+  const [currentTab, setCurrentTab] = useState(4);
   const handleChangeCurrentTab = useCallback(
     (event, newValue) => {
       setCurrentTab(newValue);
@@ -72,7 +73,7 @@ export default function App(props) {
       <AppBar position="static">
         <Toolbar>
           <Typography variant="h6" component="div" noWrap >
-              SWE 432 React examples
+              SWE 432 Assignment 8
           </Typography>
           <Box sx={{ flexGrow: 1 }} />
           <IconButton
@@ -90,6 +91,7 @@ export default function App(props) {
           <Tab label="Fetcher" />
           <Tab label="Hooks" />
           <Tab label="Toggle Buttons" />
+          <Tab label="Assignment 8" />
         </Tabs>
       </Box>
       <TabPanel value={currentTab} index={0}>
@@ -104,6 +106,9 @@ export default function App(props) {
       </TabPanel>
       <TabPanel value={currentTab} index={3}>
         <ToggleButtons />
+      </TabPanel>
+      <TabPanel value={currentTab} index={4}>
+        <Assignment8 />
       </TabPanel>
     </Box>
   );
